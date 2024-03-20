@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    command: python manage.py runserver 0.0.0.0:8000
+    environment:
+      - DEBUG=1
+      - SECRET_KEY=django-insecure-=5_ixte2bhxfynf8t&g!n7@z6gjgd8-uvh$_djy767@$u^g%ct
